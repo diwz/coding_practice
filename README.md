@@ -1,2 +1,2 @@
 # leetcode
-Algorithm practice 
+Algorithm practices
