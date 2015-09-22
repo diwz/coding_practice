@@ -2,7 +2,7 @@ public class Solution {
 	private static final int upperBound = Integer.MAX_VALUE / 10;
     public int myAtoi(String str) {
     	str = str.trim();
-    	int i = 0, n = str.length()-1;
+    	int i = 0, n = str.length();
     	int sign = 1;
     	if (i < n && str.charAt(i) == '+') {
     		i++;
