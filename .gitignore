@@ -1,3 +1,6 @@
 # Sublime Project Setting
 *.sublime-project
 *.sublime-workspace
+.idea/
+leetcode.iml
+.DS_Store
