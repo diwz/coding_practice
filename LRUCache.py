@@ -8,7 +8,6 @@ class LRUCache(object):
         self.size = 0
         self.cache = DoubleLinkedList()
         self.map = dict()
-        
 
     def get(self, key):
         """
@@ -20,7 +19,6 @@ class LRUCache(object):
             return self.map[key].val
         else:
             return -1
-        
 
     def set(self, key, value):
         """
@@ -55,7 +53,7 @@ class DoubleLinkedList(object):
     def __init__(self):
         self.head = None
         self.tail = None
-    
+
     def isEmpty(self):
         return self.head is not None
 
@@ -74,7 +72,6 @@ class DoubleLinkedList(object):
         node.prev.next = node.next
         node.next.prev = node.prev
 
-
     def removeTail(self):
         self.remove(self.tail)
 
@@ -87,5 +84,3 @@ class DoubleLinkedList(object):
         self.head.prev = node
         self.head = node
         node.prev = None
-
-
