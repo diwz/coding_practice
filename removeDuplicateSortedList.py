@@ -20,4 +20,4 @@ class Solution(object):
                 node.next = node.next.next
             else:
                 node = node.next
-        return head
+        return dummy.next
