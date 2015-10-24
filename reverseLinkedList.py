@@ -11,16 +11,13 @@ class iterativeSolution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        prev = None
-        curr = head
-        while curr:
-            tmp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = tmp
-        # fix head
-        head = prev
-        return head
+        curr = None
+        while head:
+            tmp = head.next
+            head.next = curr
+            curr = head
+            head = tmp
+        return curr
 
 
 class recursiveSolution(object):
