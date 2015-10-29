@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
+from collections import deque
 
 
 class Solution1(object):
@@ -25,15 +26,6 @@ class Solution1(object):
             return min(self.minDepth(root.left), self.minDepth(root.right)) + 1
 
 
-# Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
-
-from collections import deque
 class Solution2(object):
     def minDepth(self, root):
         """
