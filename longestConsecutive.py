@@ -37,7 +37,7 @@ class Solution(object):
             # Serach consecutive number in decreasing direction
             while cur_num in nums_set:
                 nums_set.remove(cur_num)
-                cur_len -= 1
+                cur_len += 1
                 cur_num -= 1
 
             max_len = max(max_len, cur_len)
