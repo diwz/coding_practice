@@ -10,18 +10,17 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        maxCur = nums[0]
-        minCur = nums[0]
+        if len(nums) == 0:
+            return 0
 
-        res = nums[0]
+        cur_min = nums[0]
+        cur_max = nums[0]
+        global_max = nums[0]
 
         for i in range(1, len(nums)):
-            tmpA = nums[i] * maxCur
-            tmpB = nums[i] * minCur
-            tmpC = nums[i]
-
-            maxCur = max(tmpA, tmpB, tmpC)
-            minCur = min(tmpA, tmpB, tmpC)
-
-            res = max(res, maxCur)
-        return res
+            tmpA = cur_min * nums[i]
+            tmpB = cur_max * nums[i]
+            cur_min = min(tmpA, tmpB, nums[i])
+            cur_max = max(tmpA, tmpB, nums[i])
+            global_max = max(global_max, cur_max)
+        return global_max
