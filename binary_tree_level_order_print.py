@@ -1,9 +1,8 @@
 # Level Order print binary tree
 class Solution():
     def printLevelOrder(self, root):
-        res = []
         if root is None:
-            return res
+            return
         cur = []
         cur.append(root)
         next = []
@@ -55,5 +54,5 @@ if __name__ == '__main__':
     root.insert(13)
 
     sol = Solution()
-    print sol.levelOrder(root)
+    print sol.printLevelOrder(root)
 
