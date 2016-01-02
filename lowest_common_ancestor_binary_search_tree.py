@@ -19,7 +19,6 @@ class Solution1(object):
                 root = root.right
             else:
                 root = root.left
-
         return root
 
 

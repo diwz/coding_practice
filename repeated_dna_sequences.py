@@ -6,7 +6,7 @@
 # Return:
 # ["AAAAACCCCC", "CCCCCAAAAA"].
 
-class Solution(object):
+class Solution1(object):
     def findRepeatedDnaSequences(self, s):
         """
         :type s: str
@@ -18,4 +18,17 @@ class Solution(object):
             lookup[substr] = lookup.get(substr, 0) + 1
             if lookup[substr] == 2:
                 res.append(substr)
+        return res
+
+class Solution2(object):
+    def findRepeatedDnaSequences(self, s):
+        dict, rolling_hash, res = {}, 0, []
+
+        for i in xrange(len(s)):
+            rolling_hash = rolling_hash << 3 & 0x3fffffff | ord(s[i]) & 7
+            if rolling_hash not in dict:
+                dict[rolling_hash] = True
+            elif dict[rolling_hash]:
+                res.append(s[i - 9: i + 1])
+                dict[rolling_hash] = False
         return res
