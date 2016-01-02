@@ -18,11 +18,14 @@ class recursiveSolution(object):
             return root
         left = self.lowestCommonAncestor(root.left, p, q)
         right = self.lowestCommonAncestor(root.right, p, q)
+        # If both p, q are in right sub tree
         if left is None:
             return right
+        # If both p, q are in left sub tree
         elif right is None:
             return left
         else:
+        # if p and q are not in the same sub tree
             return root
 
 
