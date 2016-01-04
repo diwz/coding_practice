@@ -15,10 +15,12 @@ class Solution(object):
         :rtype: bool
         """
         i, end = 0, len(s)-1
+        # remove leading space
         while i <= end and s[i] == " ":
             i += 1
-        if i > end:
+        if i > en*0d:
             return False
+        # remove trailing space
         while end >= i and s[end] == " ":
             end -= 1
 
@@ -27,6 +29,7 @@ class Solution(object):
         num = False
         dot = False
         exp = False
+
 
         while i <= end:
             char = s[i]
