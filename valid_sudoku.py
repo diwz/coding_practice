@@ -22,10 +22,15 @@ class Solution(object):
         for i in (0, 3, 6):
             for j in (0, 3, 6):
                 sq = [board[i+m][j+n] for m in (0, 1, 2) for n in (0, 1, 2)]
-            if not self.validate(sq):
-                return False
+                if not self.validate(sq):
+                    return False
 
         return True
 
     def validate(self, str_list):
         return str_list.count('.') + len(set(str_list)) - 1 == 9
+
+if __name__ == '__main__':
+    sol = Solution()
+
+    print sol.isValidSudoku([".4.......","..4......","...1..7..",".........","...3...6.",".....6.9.","....1....","......2..","...8....."])
