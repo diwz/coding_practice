@@ -38,6 +38,8 @@ class Plane:
         heap = []
         for k, v in self.points.items():
             heapq.heappush(heap, (getDistance(k), k))
+            if len(heap) > p:
+                heap = heapq.nsmallest(p, heap)
         res = []
         k = p
         while p > 0:
@@ -55,10 +57,12 @@ if __name__ == '__main__':
     plane = Plane()
     plane.addPoint(Point(1,1))
     plane.addPoint(Point(0,3))
+    plane.addPoint(Point(0,3))
     plane.addPoint(Point(0,4))
     plane.addPoint(Point(0,5))
     plane.addPoint(Point(0,6))
     plane.addPoint(Point(0,7))
 
-    print plane.findNearest(Point(0, 0), 3)
+    for p in plane.findNearest(Point(0, 0), 4):
+        print p
 
