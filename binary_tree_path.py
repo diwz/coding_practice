@@ -16,6 +16,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution1(object):
     def binaryTreePaths(self, root):
         """
@@ -62,7 +63,7 @@ class Solution3(object):
         while queue:
             front, path = queue.pop(0)
             if front.left is None and front.right is None:
-                resa.append(path)
+                res.append(path)
             if front.left:
                 queue.append([front.left, path + "->" + str(front.left.val)])
             if front.right:
