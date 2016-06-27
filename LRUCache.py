@@ -75,7 +75,6 @@ class DoubleLinkedList(object):
     def addHead(self, node):
         if self.head is None:
             self.head = self.tail = node
-            node.prev = node.next = None
             return
         node.next = self.head
         self.head.prev = node
