@@ -54,9 +54,6 @@ class DoubleLinkedList(object):
         self.head = None
         self.tail = None
 
-    def isEmpty(self):
-        return self.head is not None
-
     def remove(self, node):
         if self.head is self.tail:
             self.head, self.tail = None, None
@@ -64,7 +61,7 @@ class DoubleLinkedList(object):
         if node is self.head:
             node.next.prev = None
             self.head = node.next
-            return 
+            return
         if node is self.tail:
             node.prev.next = None
             self.tail = node.prev
